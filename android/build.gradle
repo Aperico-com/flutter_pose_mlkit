@@ -1,0 +1,42 @@
+group 'com.aperico.plugin_pose'
+version '1.0'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    dependencies {
+
+        implementation 'com.google.mlkit:pose-detection:17.0.1-beta2'
+        implementation 'com.google.mlkit:pose-detection-accurate:17.0.1-beta2'
+
+    }
+}
